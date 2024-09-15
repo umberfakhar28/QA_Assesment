@@ -4,7 +4,7 @@
 
 1. Clone the repo:
    ```bash
-   git clone <repo-link>
+   git clone <https://github.com/umberfakhar28/QA_Assesment.git>
    cd UMBERFAKHAR
    ```
 
