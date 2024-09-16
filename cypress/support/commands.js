@@ -24,8 +24,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('login', () => {
-  cy.visit('https://umberfakhar.xyz/wp-login.php');
-  cy.get('#user_login').type('umberfakhar.xyz', { delay: 100 });
-  cy.get('#user_pass').type('@QorS4Cu#qrUZsh#', { log: false });
+  cy.visit(Cypress.env('WP_LOGIN_URL'));
+  cy.wait(1000);
+  cy.get('#user_login')
+  .type(Cypress.env('WP_USERNAME'), { delay: 100 });
+  cy.get('#user_pass')
+  .type(Cypress.env('PASSWORD'), { log: false });
   cy.get('#wp-submit').click();
 });
